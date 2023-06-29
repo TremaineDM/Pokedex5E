@@ -24,15 +24,8 @@ function init(self)
 
 	self.text_node = gui.get_node("filepath_text")
 	self.export_btn = gui.get_node("btn_export")
-	-- Add initialization code here
-	-- Learn more: https://defold.com/manuals/script/
-	-- Remove this function if not needed
-end
-
-function final(self)
-	-- Add finalization code here
-	-- Learn more: https://defold.com/manuals/script/
-	-- Remove this function if not needed
+	self.conf_text = gui.get_node("confirmation_text")
+	gui.set_visible(self.conf_text, false)
 end
 
 local function keyboard_toggle(toggle)
@@ -47,7 +40,7 @@ end
 
 local function refresh_input(self, input, node_id)
 	if input.empty and not input.selected then
-		gui.set_text(input.node, "filepath")
+		gui.set_text(input.node, "PartyInfo")
 		gui.set_color(input.node, gui_colors.HERO_TEXT_FADED)
 	end
 
@@ -164,10 +157,11 @@ local function export_data(self)
 	table.insert(savetable, pokemon)
 	
 	local jsonString = json.encode(savetable)
-	print(jsonString)
-	local file = io.open(gui.get_text(self.text_node), "w")
+	local file = io.open(gui.get_text(self.text_node)..".json", "w")
 	file:write(jsonString)
 	file:close()
+	
+	gui.set_visible(self.conf_text, true)
 end
 
 function on_input(self, action_id, action)
