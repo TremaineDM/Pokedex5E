@@ -27,7 +27,8 @@ local map = {
 	[screens.POKEDEX] = "btn_pokedex",
 	[screens.SETTINGS] = "btn_settings",
 	[screens.TRAINER] = "btn_trainer",
-	[screens.NETWORK_CONNECT] = "btn_connect",
+	[screens.EXPORT] = "btn_export",
+--	[screens.NETWORK_CONNECT] = "btn_export",
 }
 
 local function hide(self)
@@ -66,7 +67,7 @@ local function toggle(self)
 end
 
 local function redraw_connected()
-	gui.set_enabled(gui.get_node("icon_connected"), netcore.is_connected())
+--	gui.set_enabled(gui.get_node("icon_connected"), netcore.is_connected())
 end
 
 
@@ -86,16 +87,17 @@ function init(self)
 	self.menu = gui.get_node("menu")
 	self.btn_receive = gui.get_node("btn_receive")
 	self.btn_trainer = gui.get_node("btn_trainer")
-	self.btn_connect = gui.get_node("btn_connect")
+	self.btn_export = gui.get_node("btn_export")
+--	self.btn_connect = gui.get_node("btn_connect")
 	gui.set_enabled(self.menu, false)
 
 	if not _share.ENABLED.ANY then
 		gui.set_enabled(self.btn_receive, false)
 	end
 	
-	if not _share.ENABLED.NETWORK then
-		gui.set_enabled(self.btn_connect, false)
-	end
+--	if not _share.ENABLED.NETWORK then
+--		gui.set_enabled(self.btn_connect, false)
+--	end
 	
 	local name = profiles.get_active_slot() ~= nil and profiles.get_active_name() or "Someone"
 	gui.set_text(self.btn_storage, name .. "'s PC")
@@ -151,11 +153,17 @@ function init(self)
 		toggle(self)
 	end, {no_shake=true})
 
-	button.register("btn_connect", function()
-		monarch.show(screens.NETWORK_CONNECT)
+--	button.register("btn_connect", function()
+--		monarch.show(screens.NETWORK_CONNECT)
+--		toggle(self)
+--	end, {no_shake=true})
+
+	button.register("btn_export", function()
+		monarch.show(screens.EXPORT)
 		toggle(self)
 	end, {no_shake=true})
-	
+
+		
 	if sys.get_engine_info().is_debug then
 		button.register("btn_debug", function()
 			monarch.show(screens.DEBUG)

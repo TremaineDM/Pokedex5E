@@ -1,0 +1,188 @@
+local monarch = require "monarch.monarch"
+local gooey = require "gooey.gooey"
+local pokemon_utils = require "pokedex.pokemon"
+local feat_utils = require "pokedex.feats"
+local storage = require "pokedex.storage"
+local pokedex = require "pokedex.pokedex"
+local movedex = require "pokedex.moves"
+local gooey_buttons = require "utils.gooey_buttons"
+local gui_colors = require "utils.gui_colors"
+local type_data = require "utils.type_data"
+local messages = require "utils.messages"
+local platform = require "utils.platform"
+local platform = require "utils.platform"
+local screens = require "utils.screens"
+local button = require "utils.button"
+local flow = require "utils.flow"
+local url = require "utils.url"
+local log = require "utils.log"
+
+
+function init(self)
+	msg.post(".", messages.ACQUIRE_INPUT_FOCUS)
+	msg.post(url.MENU, messages.SHOW)
+
+	self.text_node = gui.get_node("filepath_text")
+	self.export_btn = gui.get_node("btn_export")
+	-- Add initialization code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+end
+
+function final(self)
+	-- Add finalization code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+end
+
+local function keyboard_toggle(toggle)
+	local pos = disabled
+	if platform.MOBILE_PHONE then
+		if toggle then
+			pos = enabled
+		end
+		gui.set_position(gui.get_node("filepath"), pos)
+	end
+end
+
+local function refresh_input(self, input, node_id)
+	if input.empty and not input.selected then
+		gui.set_text(input.node, "filepath")
+		gui.set_color(input.node, gui_colors.HERO_TEXT_FADED)
+	end
+
+	local cursor = gui.get_node("cursor")
+	if input.selected then
+		if input.empty then
+			gui.set_text(self.text_node, "")
+		end
+		gui.set_enabled(cursor, true)
+		gui.set_position(cursor, vmath.vector3(input.total_width, 0, 0))
+		gui.cancel_animation(cursor, gui.PROP_COLOR)
+		gui.set_color(input.node, gui_colors.HERO_TEXT)
+		gui.animate(cursor, gui.PROP_COLOR, vmath.vector4(1,1,1,0), gui.EASING_INSINE, 0.8, 0, nil, gui.PLAYBACK_LOOP_PINGPONG)
+	else
+		gui.set_enabled(cursor, false)
+		gui.cancel_animation(cursor, gui.PROP_COLOR)
+	end
+end
+
+local function create_move_data(pkmn, move_key, move_value)
+	local pokemon_move_data = pokemon_utils.get_move_data(pkmn, move_key)
+	local move_data = {
+		type = pokemon_move_data.type,
+		duration = pokemon_move_data.duration,
+		range = pokemon_move_data.range,
+		time = pokemon_move_data.time,
+		description = pokemon_move_data.description,
+		pp = {
+			Max_PP = pokemon_utils.get_move_pp_max(pkmn, move_key),
+			Current_PP = pokemon_utils.get_move_pp(pkmn, move_key)
+		},
+		power = pokemon_move_data.power or "-",
+		damage = pokemon_move_data.damage or "-",
+		saves = {
+			save_ability = pokemon_move_data.save or "-",
+			save_dc = pokemon_move_data.save_dc or "-"
+		},
+		attack_bonus = pokemon_move_data.AB or "-",
+		index = move_value.index
+	}
+	return move_data
+end
+
+local function create_pokemon_table(pkmn)
+	local pokemon_info = {
+		name = pkmn.species.current,
+		nickname = pkmn.nickname,
+		level = pkmn.level.current,
+		gender = "-",
+		experience = pokemon_utils.get_exp(pkmn),
+		loyalty = pokemon_utils.get_loyalty(pkmn),
+		armour_class = pokemon_utils.get_AC(pkmn),
+		proficiency = pokemon_utils.get_proficency_bonus(pkmn),
+		stab = pokemon_utils.get_STAB_bonus(pkmn),
+		hit_dice = pkmn.level.current.."d"..pokemon_utils.get_hit_dice(pkmn),
+		type = pokemon_utils.get_type(pkmn),
+		nature = pkmn.nature,
+		hp = {
+			current_hp = pkmn.hp.current,
+			temp_hp = pokemon_utils.get_temp_hp(pkmn),
+			max_hp = pokemon_utils.get_total_max_hp(pkmn),
+		},
+		item = pkmn.item,
+		size = pokemon_utils.get_size(pkmn),
+		attributes = pokemon_utils.get_attributes(pkmn),
+		skills = pokemon_utils.get_skills(pkmn),
+		speeds = pokemon_utils.get_all_speed(pkmn),
+		senses = pokemon_utils.get_senses(pkmn),
+		statuses = pokemon_utils.get_status_effects(pkmn),
+		saving_throws = pokemon_utils.get_saving_throw_modifier(pkmn),
+		save_profs = pokedex.get_saving_throw_proficiencies(pokemon_utils.get_current_species(pkmn), pokemon_utils.get_variant(pkmn)) or {},
+		moves = {},
+		vulnerabilities = pokemon_utils.get_vulnerabilities(pkmn),
+		resistances = pokemon_utils.get_resistances(pkmn),
+		immunities = pokemon_utils.get_immunities(pkmn),
+		abilities = pokemon_utils.get_abilities(pkmn, false),
+		feats = {},
+		sprite = pokemon_utils.get_sprite(pkmn)..".png"
+	}
+
+	local move_data = pokemon_utils.get_moves(pkmn)
+	for k, v in pairs(move_data) do
+		pokemon_info.moves[k] = {
+			create_move_data(pkmn, k, v)
+		}
+	end
+
+	if pkmn.gender == 1 then
+		pokemon_info.gender = "M"
+	elseif pkmn.gender == 2 then
+		pokemon_info.gender = "F"
+	end
+
+	local feat_names = pokemon_utils.get_feats(pkmn)
+	for i, v in ipairs(feat_names) do
+		pokemon_info.feats[i] = {
+			name = v,
+			description = feat_utils.get_feat_description(v)
+		}
+	end
+	
+	return pokemon_info
+end
+
+local function export_data(self)
+	local party_ids = storage.list_of_ids_in_party()
+	local savetable = {}
+	local pokemon = {}
+	
+	for i, v in ipairs(party_ids) do
+		table.insert(pokemon, create_pokemon_table(storage.get_pokemon(v)))
+	end
+	
+	table.insert(savetable, pokemon)
+	
+	local jsonString = json.encode(savetable)
+	print(jsonString)
+	local file = io.open(gui.get_text(self.text_node), "w")
+	file:write(jsonString)
+	file:close()
+end
+
+function on_input(self, action_id, action)
+	local input =  gooey.input("filepath_text", gui.KEYBOARD_TYPE_DEFAULT, action_id, action, {use_marked_text=false}, function(input)
+		refresh_input(self, input, "filepath_text")
+	end)
+	if input.enabled then
+		if input.selected then
+			keyboard_toggle(true)
+		else
+			keyboard_toggle(false)
+		end
+	end
+
+	local c = gooey.button("btn_export", action_id, action, function()
+		export_data(self)
+	end)
+end

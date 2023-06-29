@@ -70,6 +70,9 @@ nodes {
   alpha: 1.0
   template_node_child: false
   size_mode: SIZE_MODE_MANUAL
+  custom_type: 0
+  enabled: true
+  visible: true
 }
 nodes {
   position {
@@ -125,6 +128,9 @@ nodes {
   alpha: 0.95
   template_node_child: false
   size_mode: SIZE_MODE_MANUAL
+  custom_type: 0
+  enabled: true
+  visible: true
 }
 nodes {
   position {
@@ -180,6 +186,9 @@ nodes {
   alpha: 1.0
   template_node_child: false
   size_mode: SIZE_MODE_MANUAL
+  custom_type: 0
+  enabled: true
+  visible: true
 }
 nodes {
   position {
@@ -235,6 +244,9 @@ nodes {
   alpha: 1.0
   template_node_child: false
   size_mode: SIZE_MODE_MANUAL
+  custom_type: 0
+  enabled: true
+  visible: true
 }
 nodes {
   position {
@@ -298,6 +310,9 @@ nodes {
   template_node_child: false
   text_leading: 1.0
   text_tracking: 0.0
+  custom_type: 0
+  enabled: true
+  visible: true
 }
 nodes {
   position {
@@ -319,8 +334,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 59.0
-    y: 42.0
+    x: 200.0
+    y: 100.0
     z: 0.0
     w: 1.0
   }
@@ -353,6 +368,9 @@ nodes {
   alpha: 1.0
   template_node_child: false
   size_mode: SIZE_MODE_AUTO
+  custom_type: 0
+  enabled: true
+  visible: true
 }
 nodes {
   position {
@@ -408,6 +426,9 @@ nodes {
   alpha: 1.0
   template_node_child: false
   size_mode: SIZE_MODE_MANUAL
+  custom_type: 0
+  enabled: true
+  visible: true
 }
 nodes {
   position {
@@ -471,6 +492,9 @@ nodes {
   template_node_child: false
   text_leading: 1.0
   text_tracking: 0.0
+  custom_type: 0
+  enabled: true
+  visible: true
 }
 nodes {
   position {
@@ -492,8 +516,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 76.0
-    y: 68.0
+    x: 200.0
+    y: 100.0
     z: 0.0
     w: 1.0
   }
@@ -526,6 +550,9 @@ nodes {
   alpha: 1.0
   template_node_child: false
   size_mode: SIZE_MODE_AUTO
+  custom_type: 0
+  enabled: true
+  visible: true
 }
 nodes {
   position {
@@ -581,6 +608,9 @@ nodes {
   alpha: 1.0
   template_node_child: false
   size_mode: SIZE_MODE_MANUAL
+  custom_type: 0
+  enabled: true
+  visible: true
 }
 nodes {
   position {
@@ -644,6 +674,9 @@ nodes {
   template_node_child: false
   text_leading: 1.0
   text_tracking: 0.0
+  custom_type: 0
+  enabled: true
+  visible: true
 }
 nodes {
   position {
@@ -665,8 +698,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 72.0
-    y: 73.0
+    x: 200.0
+    y: 100.0
     z: 0.0
     w: 1.0
   }
@@ -699,6 +732,9 @@ nodes {
   alpha: 1.0
   template_node_child: false
   size_mode: SIZE_MODE_AUTO
+  custom_type: 0
+  enabled: true
+  visible: true
 }
 nodes {
   position {
@@ -754,6 +790,9 @@ nodes {
   alpha: 1.0
   template_node_child: false
   size_mode: SIZE_MODE_MANUAL
+  custom_type: 0
+  enabled: true
+  visible: true
 }
 nodes {
   position {
@@ -817,6 +856,9 @@ nodes {
   template_node_child: false
   text_leading: 1.0
   text_tracking: 0.0
+  custom_type: 0
+  enabled: true
+  visible: true
 }
 nodes {
   position {
@@ -838,8 +880,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 76.0
-    y: 68.0
+    x: 200.0
+    y: 100.0
     z: 0.0
     w: 1.0
   }
@@ -872,6 +914,9 @@ nodes {
   alpha: 1.0
   template_node_child: false
   size_mode: SIZE_MODE_AUTO
+  custom_type: 0
+  enabled: true
+  visible: true
 }
 nodes {
   position {
@@ -927,6 +972,9 @@ nodes {
   alpha: 1.0
   template_node_child: false
   size_mode: SIZE_MODE_MANUAL
+  custom_type: 0
+  enabled: true
+  visible: true
 }
 nodes {
   position {
@@ -990,6 +1038,9 @@ nodes {
   template_node_child: false
   text_leading: 1.0
   text_tracking: 0.0
+  custom_type: 0
+  enabled: true
+  visible: true
 }
 nodes {
   position {
@@ -1045,6 +1096,9 @@ nodes {
   alpha: 1.0
   template_node_child: false
   size_mode: SIZE_MODE_MANUAL
+  custom_type: 0
+  enabled: true
+  visible: true
 }
 nodes {
   position {
@@ -1100,6 +1154,9 @@ nodes {
   alpha: 1.0
   template_node_child: false
   size_mode: SIZE_MODE_MANUAL
+  custom_type: 0
+  enabled: true
+  visible: true
 }
 nodes {
   position {
@@ -1164,6 +1221,9 @@ nodes {
   template_node_child: false
   text_leading: 1.0
   text_tracking: 0.0
+  custom_type: 0
+  enabled: true
+  visible: true
 }
 nodes {
   position {
@@ -1185,8 +1245,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 26.0
-    y: 42.0
+    x: 200.0
+    y: 100.0
     z: 0.0
     w: 1.0
   }
@@ -1219,6 +1279,9 @@ nodes {
   alpha: 1.0
   template_node_child: false
   size_mode: SIZE_MODE_AUTO
+  custom_type: 0
+  enabled: true
+  visible: true
 }
 nodes {
   position {
@@ -1274,6 +1337,9 @@ nodes {
   alpha: 1.0
   template_node_child: false
   size_mode: SIZE_MODE_MANUAL
+  custom_type: 0
+  enabled: true
+  visible: true
 }
 nodes {
   position {
@@ -1337,6 +1403,9 @@ nodes {
   template_node_child: false
   text_leading: 1.0
   text_tracking: 0.0
+  custom_type: 0
+  enabled: true
+  visible: true
 }
 nodes {
   position {
@@ -1358,8 +1427,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 64.0
-    y: 64.0
+    x: 200.0
+    y: 100.0
     z: 0.0
     w: 1.0
   }
@@ -1392,6 +1461,9 @@ nodes {
   alpha: 1.0
   template_node_child: false
   size_mode: SIZE_MODE_AUTO
+  custom_type: 0
+  enabled: true
+  visible: true
 }
 nodes {
   position {
@@ -1447,6 +1519,9 @@ nodes {
   alpha: 1.0
   template_node_child: false
   size_mode: SIZE_MODE_MANUAL
+  custom_type: 0
+  enabled: true
+  visible: true
 }
 nodes {
   position {
@@ -1510,6 +1585,9 @@ nodes {
   template_node_child: false
   text_leading: 1.0
   text_tracking: 0.0
+  custom_type: 0
+  enabled: true
+  visible: true
 }
 nodes {
   position {
@@ -1565,6 +1643,9 @@ nodes {
   alpha: 1.0
   template_node_child: false
   size_mode: SIZE_MODE_MANUAL
+  custom_type: 0
+  enabled: true
+  visible: true
 }
 nodes {
   position {
@@ -1620,6 +1701,9 @@ nodes {
   alpha: 1.0
   template_node_child: false
   size_mode: SIZE_MODE_MANUAL
+  custom_type: 0
+  enabled: true
+  visible: true
 }
 nodes {
   position {
@@ -1683,6 +1767,9 @@ nodes {
   template_node_child: false
   text_leading: 1.0
   text_tracking: 0.0
+  custom_type: 0
+  enabled: true
+  visible: true
 }
 nodes {
   position {
@@ -1704,8 +1791,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 51.0
-    y: 64.0
+    x: 200.0
+    y: 100.0
     z: 0.0
     w: 1.0
   }
@@ -1738,6 +1825,9 @@ nodes {
   alpha: 1.0
   template_node_child: false
   size_mode: SIZE_MODE_AUTO
+  custom_type: 0
+  enabled: true
+  visible: true
 }
 nodes {
   position {
@@ -1793,6 +1883,9 @@ nodes {
   alpha: 1.0
   template_node_child: false
   size_mode: SIZE_MODE_MANUAL
+  custom_type: 0
+  enabled: true
+  visible: true
 }
 nodes {
   position {
@@ -1856,6 +1949,9 @@ nodes {
   template_node_child: false
   text_leading: 1.0
   text_tracking: 0.0
+  custom_type: 0
+  enabled: true
+  visible: true
 }
 nodes {
   position {
@@ -1877,8 +1973,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 64.0
-    y: 64.0
+    x: 200.0
+    y: 100.0
     z: 0.0
     w: 1.0
   }
@@ -1911,6 +2007,9 @@ nodes {
   alpha: 1.0
   template_node_child: false
   size_mode: SIZE_MODE_AUTO
+  custom_type: 0
+  enabled: true
+  visible: true
 }
 nodes {
   position {
@@ -1966,6 +2065,9 @@ nodes {
   alpha: 1.0
   template_node_child: false
   size_mode: SIZE_MODE_MANUAL
+  custom_type: 0
+  enabled: true
+  visible: true
 }
 nodes {
   position {
@@ -2029,6 +2131,9 @@ nodes {
   template_node_child: false
   text_leading: 1.0
   text_tracking: 0.0
+  custom_type: 0
+  enabled: true
+  visible: true
 }
 nodes {
   position {
@@ -2050,8 +2155,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 64.0
-    y: 64.0
+    x: 200.0
+    y: 100.0
     z: 0.0
     w: 1.0
   }
@@ -2084,6 +2189,9 @@ nodes {
   alpha: 1.0
   template_node_child: false
   size_mode: SIZE_MODE_AUTO
+  custom_type: 0
+  enabled: true
+  visible: true
 }
 nodes {
   position {
@@ -2119,7 +2227,7 @@ nodes {
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
   texture: "gui/gradient"
-  id: "btn_connect"
+  id: "btn_export"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_W
@@ -2139,6 +2247,9 @@ nodes {
   alpha: 1.0
   template_node_child: false
   size_mode: SIZE_MODE_MANUAL
+  custom_type: 0
+  enabled: true
+  visible: true
 }
 nodes {
   position {
@@ -2173,9 +2284,9 @@ nodes {
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
-  text: "CONNECT"
+  text: "EXPORT"
   font: "script"
-  id: "txt_connect"
+  id: "txt_export"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_W
@@ -2193,7 +2304,7 @@ nodes {
   }
   adjust_mode: ADJUST_MODE_FIT
   line_break: false
-  parent: "btn_connect"
+  parent: "btn_export"
   layer: "script"
   inherit_alpha: false
   alpha: 1.0
@@ -2202,10 +2313,13 @@ nodes {
   template_node_child: false
   text_leading: 1.0
   text_tracking: 0.0
+  custom_type: 0
+  enabled: true
+  visible: true
 }
 nodes {
   position {
-    x: 55.0
+    x: 60.0
     y: 0.0
     z: 0.0
     w: 1.0
@@ -2223,8 +2337,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 75.0
-    y: 75.0
+    x: 80.0
+    y: 80.0
     z: 0.0
     w: 1.0
   }
@@ -2236,13 +2350,13 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "gui/share_network"
-  id: "box13"
+  texture: "gui/share_clipboard"
+  id: "box12"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
   adjust_mode: ADJUST_MODE_FIT
-  parent: "btn_connect"
+  parent: "btn_export"
   layer: "gui"
   inherit_alpha: true
   slice9 {
@@ -2257,61 +2371,9 @@ nodes {
   alpha: 1.0
   template_node_child: false
   size_mode: SIZE_MODE_MANUAL
-}
-nodes {
-  position {
-    x: 79.0
-    y: -12.0
-    z: 0.0
-    w: 1.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  size {
-    x: 35.0
-    y: 35.0
-    z: 0.0
-    w: 1.0
-  }
-  color {
-    x: 0.0
-    y: 1.0
-    z: 0.0
-    w: 1.0
-  }
-  type: TYPE_BOX
-  blend_mode: BLEND_MODE_ALPHA
-  texture: "gui/check_mark"
-  id: "icon_connected"
-  xanchor: XANCHOR_NONE
-  yanchor: YANCHOR_NONE
-  pivot: PIVOT_CENTER
-  adjust_mode: ADJUST_MODE_FIT
-  parent: "btn_connect"
-  layer: ""
-  inherit_alpha: true
-  slice9 {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 0.0
-  }
-  clipping_mode: CLIPPING_MODE_NONE
-  clipping_visible: true
-  clipping_inverted: false
-  alpha: 1.0
-  template_node_child: false
-  size_mode: SIZE_MODE_MANUAL
+  custom_type: 0
+  enabled: true
+  visible: true
 }
 nodes {
   position {
@@ -2367,6 +2429,9 @@ nodes {
   alpha: 1.0
   template_node_child: false
   size_mode: SIZE_MODE_MANUAL
+  custom_type: 0
+  enabled: true
+  visible: true
 }
 layers {
   name: "gui"
